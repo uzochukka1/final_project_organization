@@ -1,0 +1,22 @@
+---
+title: Diabetes
+author: Uzoamaka Chukka
+output: html_document
+---
+
+```{r, here-i-am, include = FALSE}
+here::i_am(
+  "report.Rmd"
+)
+```
+
+```{r, download-packages, include = FALSE}
+library (readr)
+library (dplyr)
+library(ggplot2)
+library (gridExtra)
+library (pROC)
+library(MASS)
+library(caTools)
+library(doMC)
+```
