@@ -7,7 +7,10 @@ diabetes_output:
 .PHONY: clean
 clean:
 	rm -f output/*.rds && rm -f report.html
-	
+
+Make Install rule 
+
 renv::restore()   #This restores the packages in the lockfile
 
 renv::activate()   #This loads all necessary packages needed for the project
+
