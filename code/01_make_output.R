@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 pacman::p_load(
   rio,          # File import
   here,         # File locator
@@ -85,7 +84,7 @@ ggplot(diabetes) +
 
 
 
-=======
+
 pacman::p_load(
   rio,          # File import
   here,         # File locator
@@ -173,4 +172,4 @@ ggplot(diabetes) +
 
 
  
->>>>>>> 7f1601679da13ddc30f213376c3f5530b7947860
+
