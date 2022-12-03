@@ -12,3 +12,13 @@ clean:
 .PHONY: install
 install:
 	Rscript -e "renv::restore(prompt = FALSE)"
+	
+# Docker Associated Rule
+PROJECTFILES = report.Rmd code/01_make_output.R code/02_render_report.R Makefile
+RENVFILES = renv.lock renv.activate.R renv/settings.dcf
+
+#rule to build image
+project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
+docker build -t project_image .
+	touch $@
+#rule to run container
