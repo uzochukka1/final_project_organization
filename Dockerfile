@@ -3,7 +3,7 @@ FROM rocker/r-ubuntu
 RUN Rscript -e "install.packages('here')"
 RUN Rscript -e "install.packages('rmarkdown')"
 
-RUN apt-get update && apt-get install -y pandoc 
+RUN apt-get update && apt-get install -y pandoc libcurl4-openssl-dev libssl-dev libxml2-dev
 
 RuN mkdir /final_project_organization
 WORKDIR /final_project_organization
