@@ -23,3 +23,5 @@ COPY renv/settings.dcf renv
 RUN Rscript -e "renv::restore(prompt = FALSE)"
 
 RUN mkdir final_report
+
+CMD make &&mv report.html final_report
