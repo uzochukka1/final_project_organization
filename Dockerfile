@@ -1,5 +1,8 @@
 FROM rocker/r-ubuntu 
 
+RUN Rscript -e "install.packages('here')"
+RUN Rscript -e "install.packages('rmarkdown')"
+
 RUN apt-get update && apt-get install -y pandoc 
 
 RuN mkdir /final_project_organization
