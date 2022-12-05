@@ -1,37 +1,6 @@
-pacman::p_load(
-  rio,          # File import
-  here,         # File locator
-  tidyverse,    # data management + ggplot2 graphics, 
-  stringr,      # manipulate text strings 
-  purrr,        # loop over objects in a tidy way
-  gtsummary,    # summary statistics and tests 
-  broom,        # tidy up results from regressions
-  lmtest,       # likelihood-ratio tests
-  parameters,   # alternative to tidy up results from regressions
-  see,          # alternative to visualize forest plots
-  ggplot2,
-  ggplot,
-  tidyquant,
-  lubridate,
-  slider,
-  RColorBrewer
-)
-
 #load packages
 library(tidyverse)
-library(slider)
-library(tidyquant)
-library(lubridate)
 
-pacman::p_load(
-  rio,           # import/export
-  here,          # filepaths
-  lubridate,     # working with dates
-  forcats,       # factors
-  aweek,         # create epiweeks with automatic factor levels
-  janitor,       # tables
-  tidyverse      # data mgmt and viz
-)
 
 #Import dataset (you'll have to upload), clean names
 library(readr)
@@ -43,7 +12,7 @@ diabetes <- diabetes %>%
   mutate(Diabetes_012 = recode(Diabetes_012,
                                   # for reference: OLD = NEW
                                   "0"  = "No diabetes",
-                                  "2"  = "Diabetic",
+                                  "2"  = "Diabetic"
   ))
 
 diabetes <- diabetes %>% 
@@ -80,22 +49,9 @@ figure <- ggplot(diabetes) +
                "No diabetes" = "#21908D" )) 
 
 # use saveRDS to save figure object
-saveRDS(object, file = "figure.rds")
+saveRDS(figure, file = "figure.rds")
 
 # Analysis here to create a table or figure 
-
-pacman::p_load(
-  rio,            # import/export
-  here,           # file pathways
-  flextable,      # make HTML tables
-  officer,        # helper functions for tables
-  tidyverse)     # data management, summary, and visualization
-
-library(dbplyr)
-library(gt)
-library(tidyverse)
-library(glue)
-library(gtsummary)
 
 # Get summary values per diabetic status by age, physical health, and BMI
 topicSummary <- diabetes %>%
@@ -104,10 +60,8 @@ topicSummary <- diabetes %>%
     PhysHlth = n(),                                               
     Mean_BMI = round(mean(BMI, na.rm=T), 2))
 
-knitr::kable(topicSummary)
-
 # add code to save topicSummary saveRDS
-saveRDS(object, file = "topicSummary.rds")
+saveRDS(topicSummary, file = "topicSummary.rds")
 
 
 

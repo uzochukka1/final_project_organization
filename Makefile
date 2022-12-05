@@ -2,12 +2,7 @@ report.html: report.Rmd code/02_render_report.R diabetes_output
 	Rscript code/02_render_report.R
 
 diabetes_output:
-	Rscript code/01_make_output.R output/diabetes_output.rds 
-
-
-.PHONY: clean
-clean:
-	rm -f output/*.rds && rm -f report.html
+	Rscript code/01_make_output.R 
 	
 .PHONY: install
 install:
@@ -25,5 +20,3 @@ uzochukka/project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 #rule to run container
 final_report/report.html:
 	docker run -v "/$$(pwd)/final_report":/final_project_organization/final_report uzochukka/project_image
-or 
-	docker run -it -v "//c/Users/uzchu/Downloads/final_project_organization/final_report":/final_project_organization/final_report project_image

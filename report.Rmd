@@ -11,13 +11,7 @@ here::i_am(
 ```
 
 ```{r, download-packages, include = FALSE}
-library (readr)
-library (dplyr)
 library(ggplot2)
-library (pROC)
-library(MASS)
-library(caTools)
-library(doMC)
 ```
 
 ## Introduction 
@@ -32,14 +26,15 @@ The data calculated by the BRFSS and is described below in the following table a
 
 ### Graph 1
 ``` {r}
-readRDS(file = "figure.rds") 
+figure <- readRDS(file = "figure.rds") 
+figure
 ```
 This is a stacked bar graph that shows the summarized relationship between diabetic status in relation to BMI and Physical Health level. 
 
 ### Table 1
 
 ```{r}
-readRDS(file = "topicSummary.rds")
+topicSummary <- readRDS(file = "topicSummary.rds")
 knitr::kable(topicSummary)
 ```
 This is a table that describes Age groups and the average BMI and the Physical Health levels per age group in the data set.
