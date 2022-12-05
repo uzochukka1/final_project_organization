@@ -62,7 +62,7 @@ diabetes <- diabetes %>%
 ####
 options(scipen= 1000)
 
-ggplot(diabetes) +  
+figure <- ggplot(diabetes) +  
   geom_col(
     mapping = aes(
       x = BMI_cat,                 # show pre-calculated proportion values
@@ -79,7 +79,8 @@ ggplot(diabetes) +
     values = c("Diabetic"= "#3B1c8C",
                "No diabetes" = "#21908D" )) 
 
-
+# use saveRDS to save figure object
+saveRDS(object, file = "figure.rds")
 
 # Analysis here to create a table or figure 
 
@@ -103,21 +104,10 @@ topicSummary <- diabetes %>%
     PhysHlth = n(),                                               
     Mean_BMI = round(mean(BMI, na.rm=T), 2))
 
-table1 <- topicSummary %>% gt() %>%
-  cols_label(Age = "Age",
-             PhysHlth = "Physical Health",
-             Diabetes_012 = "Diabetic Status",
-             Mean_BMI = "Mean BMI")
+knitr::kable(topicSummary)
 
-table1 %>%
-  select() %>%
-tbl_summary()
+# add code to save topicSummary saveRDS
+saveRDS(object, file = "topicSummary.rds")
 
 
-
-
-
-
-
- 
 

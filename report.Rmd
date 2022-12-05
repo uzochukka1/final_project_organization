@@ -32,15 +32,14 @@ The data calculated by the BRFSS and is described below in the following table a
 
 ### Graph 1
 ``` {r}
-
+readRDS(file = "figure.rds") 
 ```
+This is a stacked bar graph that shows the summarized relationship between diabetic status in relation to BMI and Physical Health level. 
 
 ### Table 1
 
 ```{r}
-topicSummary
+readRDS(file = "topicSummary.rds")
+knitr::kable(topicSummary)
 ```
-
-### Building the Image in DOcker 
-
-To build the image, you would type in the Terminal 'docker build -t project_image .'
+This is a table that describes Age groups and the average BMI and the Physical Health levels per age group in the data set.
