@@ -14,9 +14,33 @@ here::i_am(
 library (readr)
 library (dplyr)
 library(ggplot2)
-library (gridExtra)
 library (pROC)
 library(MASS)
 library(caTools)
 library(doMC)
 ```
+
+## Introduction 
+This data set is related to Diabetic patients 13 years and younger. The data classifies different their diabetic health outcomes and personal and environmental social determinants of health such as the Body Mass Index, High Blood Pressure, Mental Health, Physical activity, Income, Healthcare coverage etc.) 
+
+In this analysis we will be assessing the relationship between diabetic status and the relationship between Body Mass Index and levels of physical activity based on the average age group of the patients. There are a total of 253580 patients, therefore means and generalizations best suit the data. The data was sourced from Kaggle, (https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset). The data is from The Behavioral Risk Factor Surveillance System (BRFSS) is a health-related telephone survey that is collected annually by the CDC.
+
+
+## Descriptive Analysis
+
+The data calculated by the BRFSS and is described below in the following table and plot. The diabetic status of patients are compared with their BMI and levels of physical health in the graph. Whereas the table describes the age and the average BMI and physical health level per age group. 
+
+### Graph 1
+``` {r}
+
+```
+
+### Table 1
+
+```{r}
+topicSummary
+```
+
+### Building the Image in DOcker 
+
+To build the image, you would type in the Terminal 'docker build -t project_image .'
