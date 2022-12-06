@@ -5,7 +5,7 @@ library(dplyr)
 #Import dataset (you'll have to upload), clean names
 library(readr)
 diabetes_012_health_indicators_BRFSS2015 <- read_csv("diabetes_012_health_indicators_BRFSS2015.csv")
-View(diabetes_012_health_indicators_BRFSS2015)
+
 ###rename
 
 diabetes <- diabetes_012_health_indicators_BRFSS2015 %>%
