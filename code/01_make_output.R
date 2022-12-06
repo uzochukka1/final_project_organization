@@ -4,7 +4,7 @@ library(tidyverse)
 
 #Import dataset (you'll have to upload), clean names
 library(readr)
-diabetes <- read_csv("C:/Users/uzchu/Downloads/diabetes_012_health_indicators_BRFSS2015.csv/diabetes_012_health_indicators_BRFSS2015.csv")
+diabetes <- read_csv("~/diabetes_012_health_indicators_BRFSS2015.csv/diabetes_012_health_indicators_BRFSS2015.csv")
 
 ###rename
 
