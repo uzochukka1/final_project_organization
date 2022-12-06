@@ -1,17 +1,17 @@
 #load packages
 library(tidyverse)
-
+library(dplyr)
 
 #Import dataset (you'll have to upload), clean names
 library(readr)
-diabetes <- read_csv("~/diabetes_012_health_indicators_BRFSS2015.csv/diabetes_012_health_indicators_BRFSS2015.csv")
-
+diabetes_012_health_indicators_BRFSS2015 <- read_csv("diabetes_012_health_indicators_BRFSS2015.csv")
+View(diabetes_012_health_indicators_BRFSS2015)
 ###rename
 
-diabetes <- diabetes %>% 
+diabetes <- diabetes_012_health_indicators_BRFSS2015 %>%
   mutate(Diabetes_012 = recode(Diabetes_012,
                                   # for reference: OLD = NEW
-                                  "0"  = "No diabetes",
+                                  "0"  =  "No diabetes",
                                   "2"  = "Diabetic"
   ))
 
