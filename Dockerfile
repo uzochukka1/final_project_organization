@@ -17,7 +17,7 @@ RUN mkdir output
 COPY code code 
 COPY Makefile . 
 COPY report.Rmd .
-COPY diabetes_012_health_indicators_BRFSS2015
+COPY diabetes_012_health_indicators_BRFSS2015.csv
 
 RUN mkdir final_report
 
