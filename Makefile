@@ -19,4 +19,4 @@ uzochukka/project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 
 #rule to run container
 final_report/report.html:
-	docker run -v "/$(pwd)/final_report":/final_project_organization/final_report uzochukka/project_image
+	docker run -v "/$$(pwd)/final_report":/final_project_organization/final_report uzochukka/project_image
